@@ -1,9 +1,6 @@
 import React from 'react';
 import './Contact.css'
-
-
-
-const online = true
+import PropTypes from 'prop-types'
 
 const Contact = (props) => {
     return (

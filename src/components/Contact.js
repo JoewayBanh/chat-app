@@ -1,25 +1,31 @@
 import React from 'react';
 import './Contact.css'
 
-const name = "Debra Marshal";
-const avatar = "https://randomuser.me/api/portraits/women/95.jpg"
-const online = true;
 
-const Contact = () => {
+
+const online = true
+
+const Contact = (props) => {
     return (
-        <section className="Contact">
-            <img className="avatar" src={avatar}></img>
+        <div className="Contact">
+            <img className="avatar" src={props.avatar} alt={props.name} />
             <div className="name">
-                {name}
+                {props.name}
                 <div className="status">
-                    <span className="status-text">
-                        <div className="status-online"></div>
-                        {online ? "online" : "offline"}
-                    </span>
+                    <div className={props.online ? "status-online" : "status-offline"}></div>
+                    <div className="status-text">
+                        {props.online?"online":"offline"}
+                    </div>
                 </div>
             </div>
-        </section>
+        </div>
     )
 }
 
+
+Contact.propTypes = {
+    name: PropTypes.string.isRequired,
+    avatar: PropTypes.string.isRequired,
+    online: PropTypes.bool.isRequired
+  };
 export default Contact

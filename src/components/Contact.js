@@ -2,6 +2,7 @@ import React from 'react';
 import './Contact.css'
 import PropTypes from 'prop-types'
 
+
 const Contact = (props) => {
     return (
         <div className="Contact">
